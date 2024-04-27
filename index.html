@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=, initial-scale=1.0">
+    <link rel="stylesheet" href="./css/styles.css">
+    <title>Simulador de Buscador</title>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Simulador de búsqueda de propiedades</h1>
+        <label for="tipoPropiedad">Tipo de propiedad:</label>
+        <select id="tipoPropiedad">
+          <option value="todos">Todos</option>
+          <option value="casa">Casa</option>
+          <option value="departamento">Departamento</option>
+          <option value="ph">PH</option>
+        </select>
+        <button onclick="buscarPropiedades()">Buscar</button>
+        <div id="resultado"></div>
+      </div>
+
+    <script src="main.js"></script> 
+</body>
+</html>
