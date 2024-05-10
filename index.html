@@ -7,33 +7,34 @@
     <title>Simulador de Buscador</title>
 </head>
 <body>
-    <div class="container">
-        <h1>Simulador de búsqueda de propiedades</h1>
-        <label for="tipoPropiedad">Tipo de propiedad:</label>
-        <select id="tipoPropiedad">
-            <option value="todos">Todos</option>
-            <option value="casa">Casa</option>
-            <option value="departamento">Departamento</option>
-            <option value="ph">PH</option>
-        </select>
-        <label for="ambientes">Cantidad de ambientes:</label>
-        <input type="number" id="ambientes" min="1" max="4">
-        <label for="zona">Zona:</label>
-        <select id="zona">
-            <option value="todas">Todas</option>
-            <option value="Buenos Aires">Buenos Aires</option>
-            <option value="Tucumán">Tucumán</option>
-            <option value="Córdoba">Córdoba</option>
-        </select>
-        <label for="tipoVenta">Tipo de venta:</label>
-        <select id="tipoVenta">
-            <option value="ambos">Ambos</option>
-            <option value="venta">Venta</option>
-            <option value="alquiler">Alquiler</option>
-        </select>
-        <button type="button" onclick="buscarPropiedades()">Buscar</button>
-        <div id="resultado"></div>
-    </div>
-    <script src="main.js"></script>
+  <div class="container">
+      <h1>Simulador de búsqueda de propiedades</h1>
+      <label for="tipoPropiedad">Tipo de propiedad:</label>
+      <select id="tipoPropiedad">
+          <option value="todos">Todos</option>
+          <option value="casa">Casa</option>
+          <option value="departamento">Departamento</option>
+          <option value="ph">PH</option>
+      </select>
+      <label for="ambientes">Cantidad de ambientes:</label>
+      <input type="number" id="ambientes" min="1" max="4">
+      <label for="zona">Zona:</label>
+      <select id="zona">
+          <option value="todas">Todas</option>
+          <option value="Buenos Aires">Buenos Aires</option>
+          <option value="Tucumán">Tucumán</option>
+          <option value="Córdoba">Córdoba</option>
+      </select>
+      <label for="tipoVenta">Tipo de venta:</label>
+      <select id="tipoVenta">
+          <option value="ambos">Ambos</option>
+          <option value="venta">Venta</option>
+          <option value="alquiler">Alquiler</option>
+      </select>
+      <button type="button" onclick="buscarPropiedades()">Buscar</button>
+      <button type="button" id="buscarPorIdBtn" onclick="buscarPorId()">Buscar por ID</button>
+      <div id="resultado"></div>
+  </div>
+  <script src="main.js"></script>
 </body>
 </html>

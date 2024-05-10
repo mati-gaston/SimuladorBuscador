@@ -55,9 +55,18 @@ button:hover {
   padding-top: 10px;
 }
 
+/* Estilos para el botón "Buscar por ID" */
+#buscarPorIdBtn {
+  background-color: #28a745;
+}
+
+#buscarPorIdBtn:hover {
+  background-color: #218838;
+}
+
 /* Estilos adicionales para hacerlo responsivo */
 @media (max-width: 768px) {
   .container {
-      max-width: 90%;
+    max-width: 90%;
   }
 }
