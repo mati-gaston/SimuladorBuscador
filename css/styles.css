@@ -1,11 +1,11 @@
-/* Estilos generales */
 body {
-  font-family: 'Segoe UI', Roboto, sans-serif;
-  background-color: #f3f3f3; /* Fondo principal */
-  color: #333; /* Color principal del texto */
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f3f3f3; 
+  color: #333;
   margin: 0;
   padding: 0;
 }
+
 
 .container {
   max-width: 600px;
@@ -94,3 +94,4 @@ button:focus {
     padding: 8px;
   }
 }
+
