@@ -20,84 +20,53 @@ function buscarPorId() {
 }
 
 function buscarPropiedades() {
-    let continuarBusqueda = true; 
+    const tipoSeleccionado = document.getElementById('tipoPropiedad').value.toLowerCase();
+    const ambientesSeleccionados = document.getElementById('ambientes').value;
+    const zonaSeleccionada = document.getElementById('zona').value.toLowerCase();
+    const esVenta = document.getElementById('tipoVenta').value.toLowerCase();
 
-    while (continuarBusqueda) {
-        const tipoSeleccionado = prompt("Ingrese el tipo de propiedad ('casa', 'departamento', 'ph') o escriba 'Todos' para ver todas las propiedades o 'Cancelar' para salir:");
-        if (tipoSeleccionado === null) return; 
-        if (tipoSeleccionado.toLowerCase() === 'cancelar') continue;
-
-        const ambientesSeleccionados = prompt("Ingrese la cantidad de ambientes ('1', '2', '3', '4') o escriba 'Todos' para ver todas las propiedades o 'Cancelar' para salir:");
-        if (ambientesSeleccionados === null) return; 
-        if (ambientesSeleccionados.toLowerCase() === 'cancelar') continue;
-
-        const zonaSeleccionada = prompt("Ingrese la zona ('Buenos Aires', 'Tucumán', 'Córdoba') o escriba 'Todas' para ver todas las propiedades o 'Cancelar' para salir:");
-        if (zonaSeleccionada === null) return; 
-        if (zonaSeleccionada.toLowerCase() === 'cancelar') continue;
-
-        const esVenta = prompt("Ingrese 'Venta', 'Alquiler' o 'Ambos' para ver todas las propiedades o 'Cancelar' para salir:");
-        if (esVenta === null) return; 
-        if (esVenta.toLowerCase() === 'cancelar') continue;
-
-        const propiedadesFiltradas = propiedades.filter(propiedad => {
-            switch (tipoSeleccionado.toLowerCase()) {
-                case 'todos':
-                    break;
-                case propiedad.tipo.toLowerCase():
-                    break;
-                default:
-                    return false;
-            }
-
-            switch (ambientesSeleccionados.toLowerCase()) {
-                case 'todos':
-                    break;
-                case propiedad.ambientes.toString():
-                    break;
-                default:
-                    return false;
-            }
-
-            switch (zonaSeleccionada.toLowerCase()) {
-                case 'todas':
-                    break;
-                case propiedad.zona.toLowerCase():
-                    break;
-                default:
-                    return false;
-            }
-
-            switch (esVenta.toLowerCase()) {
-                case 'ambos':
-                    break;
-                case 'venta':
-                    if (!propiedad.venta) return false;
-                    break;
-                case 'alquiler':
-                    if (propiedad.venta) return false;
-                    break;
-                default:
-                    return false;
-            }
-
-            return true;
-        });
-
-        if (propiedadesFiltradas.length === 0) {
-            alert("No se encontraron propiedades que coincidan con los criterios de búsqueda. Por favor, intente con otros criterios.");
-        } else {
-            alert(`Se encontraron ${propiedadesFiltradas.length} propiedades que coinciden con los criterios de búsqueda.`);
-            console.log(propiedadesFiltradas);
+    const propiedadesFiltradas = propiedades.filter(propiedad => {
+        if (tipoSeleccionado !== 'todos' && propiedad.tipo.toLowerCase() !== tipoSeleccionado) {
+            return false;
         }
+        if (ambientesSeleccionados && propiedad.ambientes !== parseInt(ambientesSeleccionados)) {
+            return false;
+        }
+        if (zonaSeleccionada !== 'todas' && propiedad.zona.toLowerCase() !== zonaSeleccionada) {
+            return false;
+        }
+        if (esVenta !== 'ambos') {
+            const esVentaBool = esVenta === 'venta';
+            if (propiedad.venta !== esVentaBool) {
+                return false;
+            }
+        }
+        return true;
+    });
 
-        const seguirBuscando = confirm("¿Desea realizar otra búsqueda?"); 
-        if (!seguirBuscando) continuarBusqueda = false;
+    const resultadoDiv = document.getElementById('resultado');
+    resultadoDiv.innerHTML = '';
+
+    if (propiedadesFiltradas.length === 0) {
+        resultadoDiv.textContent = "No se encontraron propiedades que coincidan con los criterios de búsqueda.";
+    } else {
+        propiedadesFiltradas.forEach(propiedad => {
+            const propiedadDiv = document.createElement('div');
+            propiedadDiv.className = 'propiedad';
+            propiedadDiv.textContent = JSON.stringify(propiedad, null, 2);
+            resultadoDiv.appendChild(propiedadDiv);
+        });
     }
 }
 
-function buscarPropiedadPorId(id) {
-    const propiedadEncontrada = propiedades.find(propiedad => propiedad.id === id);
-    return propiedadEncontrada ? propiedadEncontrada : null;
+function limpiarBusqueda() {
+    document.getElementById('tipoPropiedad').value = 'todos';
+    document.getElementById('ambientes').value = '';
+    document.getElementById('zona').value = 'todas';
+    document.getElementById('tipoVenta').value = 'ambos';
+    document.getElementById('resultado').innerHTML = '';
 }
 
-buscarPropiedades();
+function buscarPropiedadPorId(id) {
+    return propiedades.find(propiedad => propiedad.id === id);
+}

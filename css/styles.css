@@ -6,7 +6,6 @@ body {
   padding: 0;
 }
 
-
 .container {
   max-width: 600px;
   margin: 30px auto;
@@ -70,6 +69,15 @@ button:focus {
   background-color: #218838; /* Color de fondo al pasar el ratón sobre el botón "Buscar por ID" */
 }
 
+/* Estilos para el botón "Limpiar búsqueda" */
+#limpiarBusquedaBtn {
+  background-color: #dc3545; /* Color de fondo del botón "Limpiar búsqueda" */
+}
+
+#limpiarBusquedaBtn:hover {
+  background-color: #c82333; /* Color de fondo al pasar el ratón sobre el botón "Limpiar búsqueda" */
+}
+
 /* Estilos para el resultado */
 #resultado {
   margin-top: 20px;
@@ -95,3 +103,10 @@ button:focus {
   }
 }
 
+.propiedad {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
+}
