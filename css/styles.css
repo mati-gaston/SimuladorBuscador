@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #f3f3f3; 
+  background-color: #F6F1EB; 
   color: #333;
   margin: 0;
   padding: 0;
@@ -45,7 +45,7 @@ button {
 
 /* Estilos para el botón principal */
 button {
-  background-color: #007bff; /* Color de fondo del botón principal */
+  background-color: #3B88C3; /* Color de fondo del botón principal */
   color: #fff; /* Color del texto del botón principal */
   border: none;
   cursor: pointer;
@@ -62,20 +62,20 @@ button:focus {
 
 /* Estilos para el botón "Buscar por ID" */
 #buscarPorIdBtn {
-  background-color: #28a745; /* Color de fondo del botón "Buscar por ID" */
+  background-color: #3B88C3  ; /* Color de fondo del botón "Buscar por ID" */
 }
 
 #buscarPorIdBtn:hover {
-  background-color: #218838; /* Color de fondo al pasar el ratón sobre el botón "Buscar por ID" */
+  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón "Buscar por ID" */
 }
 
 /* Estilos para el botón "Limpiar búsqueda" */
 #limpiarBusquedaBtn {
-  background-color: #dc3545; /* Color de fondo del botón "Limpiar búsqueda" */
+  background-color: #3B88C3  ; /* Color de fondo del botón "Limpiar búsqueda" */
 }
 
 #limpiarBusquedaBtn:hover {
-  background-color: #c82333; /* Color de fondo al pasar el ratón sobre el botón "Limpiar búsqueda" */
+  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón "Limpiar búsqueda" */
 }
 
 /* Estilos para el resultado */
