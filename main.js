@@ -1,8 +1,12 @@
-const propiedades = [
+const propiedades = JSON.parse(localStorage.getItem('propiedades')) || [
     { id: 1, tipo: 'casa', ambientes: 2, zona: 'Buenos Aires', venta: true },
     { id: 2, tipo: 'departamento', ambientes: 3, zona: 'Tucumán', venta: false },
     { id: 3, tipo: 'ph', ambientes: 1, zona: 'Córdoba', venta: true },
 ];
+
+function guardarPropiedadesEnLocalStorage() {
+    localStorage.setItem('propiedades', JSON.stringify(propiedades));
+}
 
 function buscarPorId() {
     const id = prompt("Ingrese el ID de la propiedad que desea buscar:");
@@ -12,10 +16,22 @@ function buscarPorId() {
     }
 
     const propiedadEncontrada = buscarPropiedadPorId(Number(id));
+    const resultadoIdDiv = document.getElementById('resultadoId');
+    resultadoIdDiv.innerHTML = '';
+
     if (propiedadEncontrada) {
-        alert('Propiedad encontrada:\n' + JSON.stringify(propiedadEncontrada, null, 2));
+        const propiedadDiv = document.createElement('div');
+        propiedadDiv.className = 'propiedad-card';
+        propiedadDiv.innerHTML = `
+            <h2>Propiedad ID: ${propiedadEncontrada.id}</h2>
+            <p>Tipo: ${propiedadEncontrada.tipo}</p>
+            <p>Ambientes: ${propiedadEncontrada.ambientes}</p>
+            <p>Zona: ${propiedadEncontrada.zona}</p>
+            <p>Venta: ${propiedadEncontrada.venta ? 'Sí' : 'No'}</p>
+        `;
+        resultadoIdDiv.appendChild(propiedadDiv);
     } else {
-        alert('No se encontró ninguna propiedad con ese ID.');
+        resultadoIdDiv.textContent = 'No se encontró ninguna propiedad con ese ID.';
     }
 }
 
@@ -52,8 +68,14 @@ function buscarPropiedades() {
     } else {
         propiedadesFiltradas.forEach(propiedad => {
             const propiedadDiv = document.createElement('div');
-            propiedadDiv.className = 'propiedad';
-            propiedadDiv.textContent = JSON.stringify(propiedad, null, 2);
+            propiedadDiv.className = 'propiedad-card';
+            propiedadDiv.innerHTML = `
+                <h2>Propiedad ID: ${propiedad.id}</h2>
+                <p>Tipo: ${propiedad.tipo}</p>
+                <p>Ambientes: ${propiedad.ambientes}</p>
+                <p>Zona: ${propiedad.zona}</p>
+                <p>Venta: ${propiedad.venta ? 'Sí' : 'No'}</p>
+            `;
             resultadoDiv.appendChild(propiedadDiv);
         });
     }
@@ -65,8 +87,44 @@ function limpiarBusqueda() {
     document.getElementById('zona').value = 'todas';
     document.getElementById('tipoVenta').value = 'ambos';
     document.getElementById('resultado').innerHTML = '';
+    document.getElementById('resultadoId').innerHTML = '';
 }
 
 function buscarPropiedadPorId(id) {
     return propiedades.find(propiedad => propiedad.id === id);
+}
+
+function agregarPropiedad() {
+    const tipo = prompt("Ingrese el tipo de propiedad (casa, departamento, ph):").toLowerCase();
+    const ambientes = prompt("Ingrese la cantidad de ambientes:");
+    const zona = prompt("Ingrese la zona de la propiedad:").toLowerCase();
+    const venta = prompt("¿Esta en venta? (si o no):").toLowerCase() === 'si';
+
+    if (!tipo || !ambientes || !zona) {
+        alert("Todos los campos son obligatorios.");
+        return;
+    }
+
+    const nuevaPropiedad = {
+        id: propiedades.length + 1,
+        tipo,
+        ambientes: parseInt(ambientes),
+        zona,
+        venta
+    };
+
+    const propiedadExistente = propiedades.find(propiedad => 
+        propiedad.tipo === nuevaPropiedad.tipo &&
+        propiedad.ambientes === nuevaPropiedad.ambientes &&
+        propiedad.zona === nuevaPropiedad.zona &&
+        propiedad.venta === nuevaPropiedad.venta
+    );
+
+    if (propiedadExistente) {
+        alert("La propiedad ya existe.");
+    } else {
+        propiedades.push(nuevaPropiedad);
+        guardarPropiedadesEnLocalStorage();
+        alert("Propiedad agregada exitosamente.");
+    }
 }

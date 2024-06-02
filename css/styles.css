@@ -10,12 +10,11 @@ body {
   max-width: 600px;
   margin: 30px auto;
   padding: 20px;
-  background-color: #fff; /* Fondo del contenido */
+  background-color: #fff; 
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
-/* Estilos para el contenido */
 h1 {
   text-align: center;
   margin-bottom: 25px;
@@ -39,20 +38,20 @@ button {
   box-sizing: border-box;
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
-  background-color: #f9f9f9; /* Fondo de campos de entrada y botones */
-  color: #333; /* Color del texto en campos de entrada y botones */
+  background-color: #f9f9f9;
+  color: #333; 
 }
 
-/* Estilos para el botón principal */
+
 button {
-  background-color: #3B88C3; /* Color de fondo del botón principal */
-  color: #fff; /* Color del texto del botón principal */
+  background-color: #3B88C3; 
+  color: #fff; 
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón principal */
+  background-color: #0056b3; 
 }
 
 button:focus {
@@ -60,29 +59,35 @@ button:focus {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
-/* Estilos para el botón "Buscar por ID" */
+
 #buscarPorIdBtn {
-  background-color: #3B88C3  ; /* Color de fondo del botón "Buscar por ID" */
+  background-color: #3B88C3  ;
 }
 
 #buscarPorIdBtn:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón "Buscar por ID" */
+  background-color: #0056b3; 
 }
 
-/* Estilos para el botón "Limpiar búsqueda" */
 #limpiarBusquedaBtn {
-  background-color: #3B88C3  ; /* Color de fondo del botón "Limpiar búsqueda" */
+  background-color: #3B88C3  ; 
 }
 
 #limpiarBusquedaBtn:hover {
-  background-color: #0056b3; /* Color de fondo al pasar el ratón sobre el botón "Limpiar búsqueda" */
+  background-color: #0056b3; 
 }
 
-/* Estilos para el resultado */
 #resultado {
   margin-top: 20px;
   border-top: 1px solid #ccc;
   padding-top: 12px;
+}
+
+.propiedad-card {
+  margin: 10px 0;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #f9f9f9;
 }
 
 /* Estilos responsivos */
@@ -101,12 +106,4 @@ button:focus {
   button {
     padding: 8px;
   }
-}
-
-.propiedad {
-  margin: 10px 0;
-  padding: 10px;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  background-color: #f9f9f9;
 }
