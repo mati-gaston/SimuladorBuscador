@@ -42,7 +42,6 @@ button {
   color: #333; 
 }
 
-
 button {
   background-color: #3B88C3; 
   color: #fff; 
@@ -58,7 +57,6 @@ button:focus {
   outline: none;
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
-
 
 #buscarPorIdBtn {
   background-color: #3B88C3  ;

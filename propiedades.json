@@ -1,0 +1,12 @@
+[
+    { "id": 1, "tipo": "casa", "ambientes": 2, "zona": "Buenos Aires", "venta": true },
+    { "id": 2, "tipo": "departamento", "ambientes": 3, "zona": "Tucumán", "venta": false },
+    { "id": 3, "tipo": "ph", "ambientes": 1, "zona": "Córdoba", "venta": true },
+    { "id": 4, "tipo": "casa", "ambientes": 4, "zona": "Buenos Aires", "venta": false },
+    { "id": 5, "tipo": "departamento", "ambientes": 2, "zona": "Tucumán", "venta": true },
+    { "id": 6, "tipo": "ph", "ambientes": 3, "zona": "Córdoba", "venta": false },
+    { "id": 7, "tipo": "casa", "ambientes": 1, "zona": "Buenos Aires", "venta": true },
+    { "id": 8, "tipo": "departamento", "ambientes": 4, "zona": "Tucumán", "venta": false },
+    { "id": 9, "tipo": "ph", "ambientes": 2, "zona": "Córdoba", "venta": true },
+    { "id": 10, "tipo": "casa", "ambientes": 3, "zona": "Buenos Aires", "venta": false }
+]
