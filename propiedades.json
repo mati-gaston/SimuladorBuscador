@@ -1,6 +1,6 @@
 [
     { "id": 1, "tipo": "casa", "ambientes": 2, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop1.jpg" },
-    { "id": 2, "tipo": "departamento", "ambientes": 3, "zona": "Tucumán", "venta": false, "imagen": "img/prop2.jpg" },
+    { "id": 2, "tipo": "departamento", "ambientes": 3, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop2.jpg" },
     { "id": 3, "tipo": "ph", "ambientes": 1, "zona": "Córdoba", "venta": true, "imagen": "img/prop3.jpg" },
     { "id": 4, "tipo": "casa", "ambientes": 4, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop4.jpg" },
     { "id": 5, "tipo": "departamento", "ambientes": 2, "zona": "Tucumán", "venta": true, "imagen": "img/prop5.jpg" },

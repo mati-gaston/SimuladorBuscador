@@ -40,17 +40,7 @@ function buscarPorId() {
             resultadoIdDiv.innerHTML = '';
 
             if (propiedadEncontrada) {
-                const propiedadDiv = document.createElement('div');
-                propiedadDiv.className = 'propiedad-card';
-                propiedadDiv.innerHTML = `
-                    <img src="${propiedadEncontrada.imagen}" alt="Imagen de propiedad ${propiedadEncontrada.id}" class="propiedad-imagen">
-                    <h2>Propiedad ID: ${propiedadEncontrada.id}</h2>
-                    <p>Tipo: ${propiedadEncontrada.tipo}</p>
-                    <p>Ambientes: ${propiedadEncontrada.ambientes}</p>
-                    <p>Zona: ${propiedadEncontrada.zona}</p>
-                    <p>Venta: ${propiedadEncontrada.venta ? 'Sí' : 'No'}</p>
-                `;
-                resultadoIdDiv.appendChild(propiedadDiv);
+                mostrarPropiedad(propiedadEncontrada, resultadoIdDiv);
             } else {
                 Swal.fire({
                     icon: 'warning',
@@ -80,35 +70,65 @@ function buscarPropiedades() {
     resultadoDiv.className = 'propiedades-grid';
 
     if (propiedadesFiltradas.length === 0) {
-        resultadoDiv.textContent = "No se encontraron propiedades que coincidan con los criterios de búsqueda.";
+        Swal.fire({
+            icon: 'info',
+            title: 'Sin resultados',
+            text: 'No se encontraron propiedades que coincidan con los criterios de búsqueda.'
+        });
     } else {
         propiedadesFiltradas.forEach(propiedad => {
-            const propiedadDiv = document.createElement('div');
-            propiedadDiv.className = 'propiedad-card';
-            propiedadDiv.innerHTML = `
-                <img src="${propiedad.imagen}" alt="Imagen de propiedad ${propiedad.id}" class="propiedad-imagen">
-                <h2>Propiedad ID: ${propiedad.id}</h2>
-                <p>Tipo: ${propiedad.tipo}</p>
-                <p>Ambientes: ${propiedad.ambientes}</p>
-                <p>Zona: ${propiedad.zona}</p>
-                <p>Venta: ${propiedad.venta ? 'Sí' : 'No'}</p>
-            `;
-            resultadoDiv.appendChild(propiedadDiv);
+            mostrarPropiedad(propiedad, resultadoDiv);
         });
     }
 }
 
 function limpiarBusqueda() {
-    document.getElementById('tipoPropiedad').value = 'todos';
-    document.getElementById('ambientes').value = '';
-    document.getElementById('zona').value = 'todas';
-    document.getElementById('tipoVenta').value = 'ambos';
-    document.getElementById('resultado').innerHTML = '';
-    document.getElementById('resultadoId').innerHTML = '';
+    Swal.fire({
+        title: '¿Estás seguro?',
+        text: "¡Se borrarán todos los criterios de búsqueda!",
+        icon: 'warning',
+        showCancelButton: true,
+        confirmButtonColor: '#3085d6',
+        cancelButtonColor: '#d33',
+        confirmButtonText: 'Sí, limpiar',
+        cancelButtonText: 'Cancelar'
+    }).then((result) => {
+        if (result.isConfirmed) {
+            document.getElementById('tipoPropiedad').value = 'todos';
+            document.getElementById('ambientes').value = '';
+            document.getElementById('zona').value = 'todas';
+            document.getElementById('tipoVenta').value = 'ambos';
+            document.getElementById('resultado').innerHTML = '';
+            document.getElementById('resultadoId').innerHTML = '';
+            Swal.fire(
+                '¡Limpio!',
+                'Los criterios de búsqueda han sido borrados.',
+                'success'
+            );
+        }
+    });
 }
 
 function buscarPropiedadPorId(id) {
     return propiedades.find(propiedad => propiedad.id === id);
 }
 
-document.addEventListener('DOMContentLoaded', cargarPropiedades);
+function mostrarPropiedad(propiedad, contenedor) {
+    const propiedadDiv = document.createElement('div');
+    propiedadDiv.className = 'propiedad-card';
+    propiedadDiv.innerHTML = `
+        <img src="${propiedad.imagen}" alt="Imagen de propiedad ${propiedad.id}" class="propiedad-imagen">
+        <h2>Propiedad ID: ${propiedad.id}</h2>
+        <p>Tipo: ${propiedad.tipo}</p>
+        <p>Ambientes: ${propiedad.ambientes}</p>
+        <p>Zona: ${propiedad.zona}</p>
+        <p>Venta: ${propiedad.venta ? 'Sí' : 'No'}</p>
+    `;
+    contenedor.appendChild(propiedadDiv);
+}
+
+document.addEventListener('DOMContentLoaded', cargarPropiedades); 
+
+
+
+

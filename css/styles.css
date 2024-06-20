@@ -1,6 +1,6 @@
 body {
   font-family: 'Open Sans', sans-serif;
-  background-color: #F6F1EB; 
+  background-color: #F6F1EB;
   color: #333;
   margin: 0;
   padding: 0;
@@ -10,7 +10,7 @@ body {
   max-width: 1200px;
   margin: 30px auto;
   padding: 20px;
-  background-color: #fff; 
+  background-color: #fff;
   border-radius: 10px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
@@ -39,18 +39,18 @@ button {
   font-size: 1rem;
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
   background-color: #f9f9f9;
-  color: #333; 
+  color: #333;
 }
 
 button {
-  background-color: #3B88C3; 
-  color: #fff; 
+  background-color: #3B88C3;
+  color: #fff;
   border: none;
   cursor: pointer;
 }
 
 button:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 
 button:focus {
@@ -63,15 +63,15 @@ button:focus {
 }
 
 #buscarPorIdBtn:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 
 #limpiarBusquedaBtn {
-  background-color: #3B88C3; 
+  background-color: #3B88C3;
 }
 
 #limpiarBusquedaBtn:hover {
-  background-color: #0056b3; 
+  background-color: #0056b3;
 }
 
 #resultado {
@@ -123,6 +123,6 @@ button:focus {
 
 @media (min-width: 769px) {
   .propiedades-grid {
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   }
 }
