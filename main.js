@@ -118,6 +118,9 @@ function mostrarPropiedad(propiedad, contenedor) {
     propiedadDiv.className = 'propiedad-card';
     propiedadDiv.innerHTML = `
         <img src="${propiedad.imagen}" alt="Imagen de propiedad ${propiedad.id}" class="propiedad-imagen">
+        <div class="propiedad-overlay">
+            <span>Me interesa</span>
+        </div>
         <h2>Propiedad ID: ${propiedad.id}</h2>
         <p>Tipo: ${propiedad.tipo}</p>
         <p>Ambientes: ${propiedad.ambientes}</p>
