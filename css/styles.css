@@ -1,26 +1,92 @@
 body {
   font-family: 'Open Sans', sans-serif;
   background-color: #F6F1EB;
-  background-image: linear-gradient(120deg, #fdfbfb 0%, #ebedee 100%);
   color: #333;
   margin: 0;
   padding: 0;
 }
 
-.container {
+header {
+  position: fixed;
+  width: 100%;
+  z-index: 1000;
+}
+
+.navbar .container-fluid {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.navbar-toggler {
+  margin-right: auto;
+}
+
+
+main {
+  padding-top: 40px; /* Ajusta este valor según la altura del header */
+}
+
+footer {
+  background-color: #000000e3;
+  color: #fff;
+  padding: 20px 0;
+  text-align: center;
+  font-size: 16px;
+}
+
+
+.containerf {
   max-width: 1200px;
+  margin: 0px auto;
+  padding: 10px;
+  background-color: #fff;
+  border-radius: 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.parf{
+  color: #000000;
+  margin: 0;
+}
+
+.icon-link {
+  margin-left: 10px;  /* Espacio entre los íconos y el texto */
+  text-decoration: none;
+  font-size: 20px;  /* Tamaño de los íconos */
+}
+
+/* Colores específicos para cada ícono */
+.icon-link.whatsapp {
+  color: #25D366;  /* Verde para WhatsApp */
+}
+
+.icon-link.facebook {
+  color: #3b5998;  /* Azul para Facebook */
+}
+
+.icon-link.gmail {
+  color: #D44638;  /* Rojo para Gmail */
+}
+
+.icon-link:hover {
+  opacity: 0.7;  /* Efecto de opacidad al pasar el ratón por encima */
+}
+
+.container {
+  max-width: 1000px;
   margin: 30px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 15px;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center; /* Esto ya está */
 }
 
 h1 {
   text-align: center;
   margin-bottom: 25px;
   font-size: 1.8rem;
-  animation: fadeInUp 1.5s ease-in-out, shadowPulse 1.5s ease-in-out infinite alternate;
   color: #3B88C3;
 }
 
@@ -28,14 +94,19 @@ label {
   display: block;
   margin-bottom: 12px;
   font-weight: bold;
+  text-align: left;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 300px;
 }
 
 input[type="number"],
 select,
 button {
   width: 100%;
-  padding: 10px;
-  margin-bottom: 20px;
+  max-width: 300px;
+  padding: 8px;
+  margin-bottom: 15px;
   border: 1px solid #ccc;
   border-radius: 10px;
   box-sizing: border-box;
@@ -43,6 +114,7 @@ button {
   transition: border-color 0.3s ease, box-shadow 0.3s ease, transform 0.2s ease-in-out;
   background-color: #f9f9f9;
   color: #333;
+  margin: 0 auto;
 }
 
 input[type="number"]:focus,
@@ -71,6 +143,12 @@ button:focus {
   box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.3);
 }
 
+button.full-width {
+  display: block; /* Cambio de flex a block */
+  max-width: 300px;
+  margin: 20px auto; /* Auto para ambos lados */
+}
+
 #buscarPorIdBtn {
   background-color: #3B88C3;
 }
@@ -92,6 +170,7 @@ button:focus {
   border-top: 1px solid #ccc;
   padding-top: 12px;
 }
+
 
 .propiedades-grid {
   display: grid;
@@ -148,6 +227,8 @@ button:focus {
   font-size: 1.2rem;
   font-weight: bold;
 }
+
+
 
 @keyframes fadeInUp {
   0% {
