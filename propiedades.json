@@ -1,12 +1,12 @@
 [
-    { "id": 1, "tipo": "casa", "ambientes": 2, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop1.jpg" },
-    { "id": 2, "tipo": "departamento", "ambientes": 3, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop2.jpg" },
-    { "id": 3, "tipo": "ph", "ambientes": 1, "zona": "Córdoba", "venta": true, "imagen": "img/prop3.jpg" },
-    { "id": 4, "tipo": "casa", "ambientes": 4, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop4.jpg" },
-    { "id": 5, "tipo": "departamento", "ambientes": 2, "zona": "Tucumán", "venta": true, "imagen": "img/prop5.jpg" },
-    { "id": 6, "tipo": "ph", "ambientes": 3, "zona": "Córdoba", "venta": false, "imagen": "img/prop6.jpg" },
-    { "id": 7, "tipo": "casa", "ambientes": 1, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop7.jpg" },
-    { "id": 8, "tipo": "departamento", "ambientes": 4, "zona": "Tucumán", "venta": false, "imagen": "img/prop8.jpg" },
-    { "id": 9, "tipo": "ph", "ambientes": 2, "zona": "Córdoba", "venta": true, "imagen": "img/prop9.jpg" },
-    { "id": 10, "tipo": "casa", "ambientes": 3, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop10.jpg" }
+    { "id": 1, "tipo": "Casa", "ambientes": 5, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop1.jpg" },
+    { "id": 2, "tipo": "Departamento", "ambientes": 3, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop2.jpg" },
+    { "id": 3, "tipo": "PH", "ambientes": 2, "zona": "Córdoba", "venta": true, "imagen": "img/prop3.jpg" },
+    { "id": 4, "tipo": "Casa", "ambientes": 4, "zona": "Buenos Aires", "venta": false, "imagen": "img/prop4.jpg" },
+    { "id": 5, "tipo": "Departamento", "ambientes": 2, "zona": "Tucumán", "venta": true, "imagen": "img/prop5.jpg" },
+    { "id": 6, "tipo": "PH", "ambientes": 2, "zona": "Córdoba", "venta": false, "imagen": "img/prop6.jpg" },
+    { "id": 7, "tipo": "Casa", "ambientes": 1, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop7.jpg" },
+    { "id": 8, "tipo": "Departamento", "ambientes": 4, "zona": "Tucumán", "venta": false, "imagen": "img/prop8.jpg" },
+    { "id": 9, "tipo": "Departamento", "ambientes": 2, "zona": "Córdoba", "venta": true, "imagen": "img/prop9.jpg" },
+    { "id": 10, "tipo": "Casa", "ambientes": 5, "zona": "Buenos Aires", "venta": true, "imagen": "img/prop10.jpg" }
 ]

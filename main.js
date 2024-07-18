@@ -131,7 +131,3 @@ function mostrarPropiedad(propiedad, contenedor) {
 }
 
 document.addEventListener('DOMContentLoaded', cargarPropiedades); 
-
-
-
-
